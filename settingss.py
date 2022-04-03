@@ -8,9 +8,9 @@ velocityt = 1
 inffffinitebbbultes = False
 
 # Default = False
-memesounds = True
+memesounds = False
 
-# Default = False
+# Default = True
 shotss = True
 
 # Default = 0, 
