@@ -1,6 +1,8 @@
 # Modded-Two-Birds-with-one-stone
 This is a modded version of the game Two Birds with one stone made by PolyMars
 
+Original game: https://bit.ly/3u3uYwv
+
 # How to acess the modded stuff
 Using the settingss.py
 
