@@ -18,3 +18,9 @@ levelpractise = 0
 
 # Default = 1
 speeedofrock = 1
+
+# Default = False
+memeimages = False
+
+# Default = False,reccomendation use this with memeimages
+memelore  = False

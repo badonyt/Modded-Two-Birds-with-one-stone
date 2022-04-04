@@ -7,7 +7,7 @@ from game.bird import Bird
 from game.box import Box
 from game.powerline import Powerline
 from game.spark import Spark
-from settingss import resett, memesounds, shotss, levelpractise
+from settingss import resett, memesounds, shotss, levelpractise, memeimages, memelore
 
 projectiles = []
 birds = []
@@ -24,25 +24,52 @@ def main():
     (width, height) = (640, 480)
 
     display = pygame.display.set_mode((width, height))
-    pygame.display.set_caption("two birds, one stone")
+    if memelore == False:
+        pygame.display.set_caption("two birds, one stone")
+    elif memelore == True:
+        pygame.display.set_caption("Defend, The rock")
     running = True
 
     # get some images
-    shooterTex = pygame.image.load('data/gfx/shooter.png')
-    projectileTex = pygame.image.load('data/gfx/rock.png')
-    polesTex = pygame.image.load('data/gfx/poles.png')
-    backgroundTex = pygame.image.load('data/gfx/background.png')
-    birdTex = pygame.image.load('data/gfx/bird.png')
-    birdTex_right = pygame.image.load('data/gfx/mbird_right.png')
-    birdTex_left = pygame.image.load('data/gfx/mbird_left.png')
-    boxTex = pygame.image.load('data/gfx/box.png')
-    grassTex = pygame.image.load('data/gfx/grass.png')
-    sparkTex_front = pygame.image.load('data/gfx/spark_front.png')
-    sparkTex_back = pygame.image.load('data/gfx/spark_back.png')
-    levelTextBorder = pygame.image.load('data/gfx/level_border.png')
-    shotsTextBorder = pygame.image.load('data/gfx/shots_border.png')
-    logoTex = pygame.image.load('data/gfx/logo.png')
-    winOverlayTex = pygame.image.load('data/gfx/win_overlay.png')
+    if memeimages == False:
+        shooterTex = pygame.image.load('data/gfx/shooter.png')
+        projectileTex = pygame.image.load('data/gfx/rock.png')
+        polesTex = pygame.image.load('data/gfx/poles.png')
+        backgroundTex = pygame.image.load('data/gfx/background.png')
+        birdTex = pygame.image.load('data/gfx/bird.png')
+        birdTex_right = pygame.image.load('data/gfx/mbird_right.png')
+        birdTex_left = pygame.image.load('data/gfx/mbird_left.png')
+        boxTex = pygame.image.load('data/gfx/box.png')
+        grassTex = pygame.image.load('data/gfx/grass.png')
+        sparkTex_front = pygame.image.load('data/gfx/spark_front.png')
+        sparkTex_back = pygame.image.load('data/gfx/spark_back.png')
+        levelTextBorder = pygame.image.load('data/gfx/level_border.png')
+        shotsTextBorder = pygame.image.load('data/gfx/shots_border.png')
+        if memelore == True:
+            logoTex = pygame.image.load('data/gfx/meme/logo.png')
+        elif memelore == False:
+            logoTex = pygame.image.load('data/gfx/logo.png')
+        winOverlayTex = pygame.image.load('data/gfx/win_overlay.png')
+    elif memeimages == True:
+        shooterTex = pygame.image.load('data/gfx/shooter.png')
+        projectileTex = pygame.image.load('data/gfx/meme/rock.png')
+        polesTex = pygame.image.load('data/gfx/poles.png')
+        backgroundTex = pygame.image.load('data/gfx/background.png')
+        birdTex = pygame.image.load('data/gfx/meme/bird.png')
+        birdTex_right = pygame.image.load('data/gfx/meme/mbird_right.png')
+        birdTex_left = pygame.image.load('data/gfx/meme/mbird_left.png')
+        boxTex = pygame.image.load('data/gfx/box.png')
+        grassTex = pygame.image.load('data/gfx/grass.png')
+        sparkTex_front = pygame.image.load('data/gfx/spark_front.png')
+        sparkTex_back = pygame.image.load('data/gfx/spark_back.png')
+        levelTextBorder = pygame.image.load('data/gfx/level_border.png')
+        shotsTextBorder = pygame.image.load('data/gfx/shots_border.png')
+        if memelore == True:
+            logoTex = pygame.image.load('data/gfx/meme/logo.png')
+        elif memelore == False:
+            logoTex = pygame.image.load('data/gfx/logo.png')
+        winOverlayTex = pygame.image.load('data/gfx/win_overlay.png')
+
     # get fonts
     font = pygame.font.Font('data/font/font.otf', 100)
     font_32 = pygame.font.Font('data/font/font.otf', 32)
@@ -267,7 +294,10 @@ def main():
 
         if currentLevel > 9:
             display.blit(winOverlayTex, (0, 0))
-            winText = font_48.render('GOVERNMENT DESTROYED.', True, (255, 255, 255))
+            if memelore == False:
+                winText = font_48.render('GOVERNMENT DESTROYED.', True, (255, 255, 255))
+            elif memelore == True:
+                winText = font_48.render('Rock defended.', True, (255, 255, 255))
             display.blit(winText, (320 - winText.get_width()/2, 240 - winText.get_height() - 20))
             shotsText = font_32.render('SHOTS: ' + str(shots), True, (255, 255, 255))
             display.blit(shotsText, (320 - shotsText.get_width()/2, 240 - shotsText.get_height() + 20))

@@ -20,6 +20,10 @@ levelpractise, to grind individual levels(-1 the number you want)
 
 speeedofrock, speed that the projectile travels
 
+memeimages, images that are big memes
+
+memelore, secret lore(recommendation, use memeimages)
+
 # Why did i make this
 I was bored
 
