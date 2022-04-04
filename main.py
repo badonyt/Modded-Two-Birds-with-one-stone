@@ -185,6 +185,7 @@ def main():
                 if len(birds) is 0:
                     if levelpractise > 0:
                         reset(currentLevel) 
+                        pygame.mixer.Sound.play(winfx)
                     else:
                         currentLevel += 1
                         reset(currentLevel) 
@@ -211,7 +212,7 @@ def main():
             if levelpractise > 0:
                 reset(currentLevel) 
                 pygame.mixer.Sound.play(winfx)
-                return
+                print("here we leave the memorial where once a bug existed. patched in 2022")
             else:
                 pygame.mixer.Sound.play(winfx)
                 currentLevel += 1
